@@ -37,22 +37,22 @@ const Home=()=>{
         <div className="carousel-item active">
           <img src={img1} alt="Los Angeles" className="d-block" style={{ width: '100%' }} />
           <div className="carousel-caption">
-            <h3>Los Angeles</h3>
-            <p>We had such a great time in LA!</p>
+            <h3>IPAD PRO</h3>
+            <p>Best Ipad Ever!</p>
           </div>
         </div>
         <div className="carousel-item">
           <img src={img2} alt="Chicago" className="d-block" style={{ width: '100%' }} />
           <div className="carousel-caption">
-            <h3>Chicago</h3>
-            <p>Thank you, Chicago!</p>
+            <h3>JBL</h3>
+            <p>Have a premium sound experience</p>
           </div>
         </div>
         <div className="carousel-item">
           <img src={img3} alt="New York" className="d-block" style={{ width: '100%' }} />
           <div className="carousel-caption">
-            <h3>New York</h3>
-            <p>We love the Big Apple!</p>
+            <h3>ROLEX</h3>
+            <p>Its not about time!</p>
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@ const Home=()=>{
     <div className="container mt-3">
       <div className="row" id="al">
       {product.map(pro=> (
-        <div className="col-lg-3 col-md-3 c0l-sm-6" key={pro.id}>
+        <div className="col-lg-3 col-md-3 col-sm-6" key={pro.id}>
           <div className="card" onClick={()=>view_p(pro)}>
             <img childrenlassNmae="card-img-top img-fluid" src={pro.image} alt="product image" />
             <div className="card-body">
