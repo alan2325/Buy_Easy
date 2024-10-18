@@ -68,7 +68,7 @@ const Home=()=>{
 
 
     <div className="container mt-3">
-      <div className="row" id="al">
+      <div className="row" id="a1">
       {product.map(pro=> (
         <div className="col-lg-3 col-md-3 col-sm-6" key={pro.id}>
           <div className="card" onClick={()=>view_p(pro)}>
@@ -81,66 +81,49 @@ const Home=()=>{
         </div>
         ))}
       </div>
+      {add ?(
+        <ViewProduct
+        currentproduct={currentProduct}
+        />
+      ):console.log('view product     ')}
     </div>
+
+
+
+
     <Footer/>
     </>
   );
 };
 
+
+
+
+
+
+const ViewProduct=(currentproduct)=>{
+  const [product,setProduct]=useState(currentproduct)
+  document.getElementById("a1").style.display="none"
+  document.getElementById("demo").style.display="none"
+  return(
+    <div className="container">
+      <div className="row g-4">
+        <div className="col-lg-6 d-flrx justify-content-center">
+          <img src={product.currentproduct.image} alt="" className="img-fluid col-lg-12 w-75" />
+        </div>
+        <div className="desc col-lg-6">
+          <h2>{product.currentproduct.p_name}</h2>
+          <p>{product.currentproduct.description}</p>
+          <p>${product.currentproduct.price}</p>
+          <div className="row">
+            <button className="btn btn-warning col-lg-10">Add to cart</button>
+            <button className="btn btn-success col-lg-10 mt-1">Buy now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
 export default Home
-
-
-
-
-
-
-// function Home() {
-//   return (
-//     <>
-//       <div id="demo" className="carousel slide" data-bs-ride="carousel">
-        
-//         <div className="carousel-indicators">
-//           <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
-//           <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-//           <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-//         </div>
-        
-//         <div className="carousel-inner">
-//           <div className="carousel-item active">
-//             <img src={img1} alt="Los Angeles" className="d-block" style={{ width: '100%' }} />
-//             <div className="carousel-caption">
-//               <h3>Los Angeles</h3>
-//               <p>We had such a great time in LA!</p>
-//             </div>
-//           </div>
-//           <div className="carousel-item">
-//             <img src={img2} alt="Chicago" className="d-block" style={{ width: '100%' }} />
-//             <div className="carousel-caption">
-//               <h3>Chicago</h3>
-//               <p>Thank you, Chicago!</p>
-//             </div>
-//           </div>
-//           <div className="carousel-item">
-//             <img src={img3} alt="New York" className="d-block" style={{ width: '100%' }} />
-//             <div className="carousel-caption">
-//               <h3>New York</h3>
-//               <p>We love the Big Apple!</p>
-//             </div>
-//           </div>
-//         </div>
-
-//         <button className="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-//           <span className="carousel-control-prev-icon"></span>
-//         </button>
-//         <button className="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-//           <span className="carousel-control-next-icon"></span>
-//         </button>
-//       </div>
-
-
-//       <Footer/>
-//     </>
-//   );
-// }
-
-// export default Home;
